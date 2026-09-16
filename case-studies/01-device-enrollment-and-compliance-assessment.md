@@ -1,6 +1,6 @@
 # Device Enrollment and Compliance Assessment
 
-> Status: Draft
+> Status: Complete
 
 ## Scenario
 
@@ -106,4 +106,10 @@ The exact cause was not confirmed during this activity. The result established a
 
 ## Evidence
 
-Supporting screenshots showing the enrolled device and its policy-level compliance results will be added next.
+| Evidence | What it demonstrates |
+|---|---|
+| [Intune device enrollment status](../evidence/device-enrollment-and-compliance/01-intune-device-enrollment-status.png) | `win11-lab` was enrolled, managed by Intune, and reported as noncompliant |
+| [Device compliance policy results](../evidence/device-enrollment-and-compliance/02-device-compliance-policy-results.png) | The Defender policy was compliant while the default policy was not compliant |
+| [Default policy `Is active` failure](../evidence/device-enrollment-and-compliance/03-default-policy-is-active-failure.png) | `Is active` was the specific setting responsible for the default-policy failure |
+
+Additional descriptions and full-size screenshots are available in the [evidence documentation](../evidence/device-enrollment-and-compliance/README.md).
