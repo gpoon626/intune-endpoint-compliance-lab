@@ -6,9 +6,9 @@ This repository documents hands-on Microsoft Intune case studies completed in an
 
 ## Case Studies
 
-| Case study | Tickets | Status |
-|---|---|---|
-| [Device Enrollment and Compliance Assessment](case-studies/01-device-enrollment-and-compliance-assessment.md) | CA-0017 and CA-0018 | Complete |
+| Case study | Status |
+|---|---|
+| [Device Enrollment and Compliance Assessment](case-studies/01-device-enrollment-and-compliance-assessment.md) | Complete |
 
 ## Current Case Study
 
@@ -30,7 +30,7 @@ Future case studies may cover:
 - Windows update and patch-compliance investigation
 - Compliance reporting and operational monitoring
 
-Planned topics will be added only after the corresponding lab activities and evidence have been completed.
+Planned topics will be added only after the corresponding lab activities and supporting evidence have been completed.
 
 ## Technologies and Concepts
 
@@ -58,3 +58,12 @@ intune-endpoint-compliance-lab/
         ├── 01-intune-device-enrollment-status.png
         ├── 02-device-compliance-policy-results.png
         └── 03-default-policy-is-active-failure.png
+```
+
+## Scope and Ethics
+
+- All activities were performed in an authorized lab environment.
+- No production users, endpoints, or policies were modified.
+- No security controls were weakened for this case study.
+- Identifying information was redacted from publicly shared evidence.
+- Findings are limited to the observed test environment and should not be generalized without additional validation.
