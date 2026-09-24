@@ -1,6 +1,6 @@
 # BitLocker Compliance Failure and Remediation
 
-> Status: Draft
+> Status: Complete
 
 ## Scenario
 
@@ -142,5 +142,20 @@ BitLocker was restored, 100% of the operating system drive’s used space was en
 * Operational-impact analysis
 
 ## Evidence
+
+| Evidence | What it demonstrates |
+|---|---|
+| [Compliant state before change](../evidence/bitlocker-compliance-remediation/01-intune-bitlocker-compliant-before-change.png) | Intune reported the encryption controls as compliant before the controlled change |
+| [BitLocker turn-off control](../evidence/bitlocker-compliance-remediation/02-bitlocker-turn-off-control.png) | Windows control used to initiate BitLocker decryption |
+| [Local BitLocker failure state](../evidence/bitlocker-compliance-remediation/03-local-bitlocker-disabled.png) | The operating-system drive was fully decrypted with protection turned off |
+| [Intune noncompliance detection](../evidence/bitlocker-compliance-remediation/04-intune-bitlocker-noncompliant.png) | BitLocker noncompliance and the storage-encryption remediation error |
+| [Local BitLocker restoration](../evidence/bitlocker-compliance-remediation/05-local-bitlocker-restored.png) | The drive had 100% of its used space encrypted with protection enabled |
+| [Overall device compliance restored](../evidence/bitlocker-compliance-remediation/06-intune-device-compliance-restored.png) | The device returned to an overall compliant state in Intune |
+| [Encryption controls compliant](../evidence/bitlocker-compliance-remediation/07-intune-bitlocker-controls-compliant.png) | BitLocker and device-storage encryption checks passed |
+| [Windows security baseline selection](../evidence/bitlocker-compliance-remediation/08-windows-security-baseline-selection.png) | The Windows security baseline selected for preventive-control review |
+| [Security-baseline category selection](../evidence/bitlocker-compliance-remediation/09-security-baseline-category-selection.png) | The configuration-category navigation used to locate relevant settings |
+| [Fixed-drive BitLocker setting](../evidence/bitlocker-compliance-remediation/10-bitlocker-fixed-drive-baseline-setting.png) | The reviewed write-access controls for unprotected removable and fixed drives |
+
+Additional descriptions and full-size screenshots are available in the [evidence documentation](../evidence/bitlocker-compliance-remediation/README.md).
 
 Supporting screenshots showing the BitLocker compliance failure, local remediation, restored Intune compliance, and reviewed security-baseline setting will be added next.
