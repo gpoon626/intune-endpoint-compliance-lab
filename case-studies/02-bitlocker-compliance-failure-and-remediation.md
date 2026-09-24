@@ -54,9 +54,11 @@ BitLocker was restored on the operating-system drive. The following command was 
 
 The command confirmed:
 
-* Conversion status: Fully encrypted
-* Percentage encrypted: 100%
-* Protection status: Protection on
+- Conversion status: Used Space Only Encrypted
+- Percentage encrypted: 100.0%
+- Encryption method: XTS-AES 128
+- Protection status: Protection On
+- Key protectors: TPM and Numerical Password
 
 These results verified that encryption had been restored locally before relying on the management portal’s status.
 
@@ -106,7 +108,7 @@ Security baselines provide recommended configurations, but each setting should b
 
 Microsoft Intune detected that the lab device no longer met its BitLocker requirement after encryption protection was disabled.
 
-BitLocker was restored, the operating-system drive was verified as fully encrypted with protection enabled, and Intune later reported the device as compliant. The exercise demonstrated the complete lifecycle of a controlled compliance failure:
+BitLocker was restored, 100% of the operating system drive’s used space was encrypted with protection enabled, and Intune later reported the device as compliant. The exercise demonstrated the complete lifecycle of a controlled compliance failure:
 
 1. Security-control change
 2. Centralized detection
