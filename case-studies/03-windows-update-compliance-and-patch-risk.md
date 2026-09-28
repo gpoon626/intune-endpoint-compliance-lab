@@ -1,6 +1,6 @@
 # Windows Update Compliance and Patch Risk Investigation
 
-> Status: Draft
+> Status: Complete
 
 ## Scenario
 
@@ -142,4 +142,13 @@ The primary finding was that organizations should not rely on a general device-c
 
 ## Evidence
 
-Supporting screenshots will be added after the evidence files are reviewed, redacted, and renamed.
+| Evidence | What it demonstrates |
+|---|---|
+| [No update rings configured](../evidence/windows-update-compliance/01-intune-no-update-rings-configured.png) | No Intune update-ring policies were configured |
+| [Windows Update history](../evidence/windows-update-compliance/02-windows-update-history.png) | The visible history contained driver and Defender definition updates but no quality update |
+| [Current Windows build](../evidence/windows-update-compliance/03-windows-build-version.png) | The current VM was running Windows 11 25H2, build `26200.9168` |
+| [Paused updates and pending security update](../evidence/windows-update-compliance/04-paused-updates-and-pending-security-update.png) | The procedural update pause and pending September 2026 security update |
+| [Intune quality-update status](../evidence/windows-update-compliance/05-intune-quality-update-status.png) | The current build was not up to date and was one monthly security release behind |
+| [Organization-wide device compliance](../evidence/windows-update-compliance/06-organization-wide-device-compliance.png) | The current VM was generally compliant even though it was behind the target security release |
+
+Additional descriptions and full-size screenshots are available in the [evidence documentation](../evidence/windows-update-compliance/README.md).
