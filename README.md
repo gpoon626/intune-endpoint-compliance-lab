@@ -9,6 +9,7 @@ This repository documents hands-on Microsoft Intune case studies completed in an
 | Case study | Status |
 |---|---|
 | [Device Enrollment and Compliance Assessment](case-studies/01-device-enrollment-and-compliance-assessment.md) | Complete |
+| [BitLocker Compliance Failure and Remediation](case-studies/02-bitlocker-compliance-failure-and-remediation.md) | Complete |
 
 ## Current Case Study
 
@@ -51,13 +52,11 @@ Planned topics will be added only after the corresponding lab activities and sup
 intune-endpoint-compliance-lab/
 ├── README.md
 ├── case-studies/
-│   └── 01-device-enrollment-and-compliance-assessment.md
+│   ├── 01-device-enrollment-and-compliance-assessment.md
+│   └── 02-bitlocker-compliance-failure-and-remediation.md
 └── evidence/
-    └── device-enrollment-and-compliance/
-        ├── README.md
-        ├── 01-intune-device-enrollment-status.png
-        ├── 02-device-compliance-policy-results.png
-        └── 03-default-policy-is-active-failure.png
+    ├── device-enrollment-and-compliance/
+    └── bitlocker-compliance-remediation/
 ```
 
 ## Scope and Ethics
