@@ -23,6 +23,7 @@ The investigation compared local operating-system information, Windows Update hi
 * Microsoft Intune
 * Windows 11 virtual machine named `win11-lab`
 * Windows 11 version 25H2
+* Current lab build: `10.0.26200.9168`
 * Windows Update
 * Windows Quality Update Status report
 * Device Compliance report
@@ -63,19 +64,25 @@ The report showed:
 * Target release: `2026.09 B Security`
 * Update-ring assignment: None
 
-This established that the device was one monthly security release behind the target release. Windows Updates were resumed after the evidence was collected.
+The report displayed two records named `win11-lab`. The record on build `10.0.26200.9168` matched the local `winver` result and represented the current lab device. The record on build `10.0.26200.8246` came from an earlier VM that had been deleted and did not represent the current endpoint.
+
+Using the current build record, Intune showed that the device had `2026.08 B Security` installed while `2026.09 B Security` was the target release. This established that the current device was one monthly security release behind. Windows Updates were resumed after the evidence was collected.
 
 ### 4. Organization-Wide Compliance Comparison
 
-The Intune Device Compliance report was generated and exported. This report provided an organization-wide view of enrolled-device compliance.
+The Intune Device Compliance report was generated and exported. This report provided an organization-wide view of device-compliance records in the tenant.
 
 The report showed:
 
-* One enrolled device
-* `win11-lab` marked as compliant
-* Operating-system version `10.0.26200.9168`
+- 17 device records
+- 1 compliant record
+- 16 noncompliant records
+- The current `win11-lab` record on build `10.0.26200.9168` marked as compliant
+- A historical `win11-lab` record on build `10.0.26200.8246` marked as noncompliant
 
-The general compliance result did not match the patch-compliance result. The endpoint was compliant with its assigned device policies while the Windows Quality Update Status report showed that it was not up to date.
+The older record belonged to a previous lab VM that had been deleted. It was not used to determine the current endpoint’s state. The record on build `10.0.26200.9168` matched the local `winver` result and was treated as the current device.
+
+The current device was compliant with its assigned device policies while the Windows Quality Update Status report showed that it was not up to date. This demonstrated that general device compliance and patch compliance measure different parts of endpoint security.
 
 ## Assessment
 
@@ -86,7 +93,7 @@ The general compliance result did not match the patch-compliance result. The end
 | Quality-update status        | Not up to date          | The device was missing the target monthly security release           |
 | Installed security release   | `2026.08 B Security`    | The endpoint was one release behind                                  |
 | Target security release      | `2026.09 B Security`    | An update was required to reach the target patch level               |
-| General device compliance    | Compliant               | General compliance did not confirm that the device was fully patched |
+| General device compliance | Current build compliant; historical build noncompliant | General compliance was separate from the Windows quality-update status |
 
 ## Security Considerations
 
@@ -114,7 +121,9 @@ The primary finding was that organizations should not rely on a general device-c
 ## Limitations
 
 * The investigation involved one authorized lab virtual machine.
-* The organization-wide report contained only one enrolled device.
+- The organization-wide report contained records for devices outside the endpoint being investigated.
+- Intune displayed a historical record for an earlier deleted `win11-lab` VM.
+- The investigation used build `10.0.26200.9168` because it matched the local `winver` result.
 * No update ring was assigned during the investigation.
 * Update-ring settings were reviewed conceptually because no existing policy was available.
 * The findings represent the device’s patch state at the time the evidence was collected.
